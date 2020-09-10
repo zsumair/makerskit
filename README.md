@@ -1,6 +1,6 @@
-# Airtable listing theme for Gatsby
+# Airtable listing theme for Makers tools
 
-### Gatsby starter theme integrated with [Airtable](https://airtable.com/)
+<!-- ### Gatsby starter theme integrated with [Airtable](https://airtable.com/)
 
 ## Demo
 
@@ -8,7 +8,6 @@ Live demo is available at: https://gatsby-airtable-listing.netlify.com/
 
 ## Screenshot
 
-![The home page](screenshot.png?raw=true)
 
 ## Features
 
@@ -71,4 +70,4 @@ Run in the project locally.
 
 #### `gatsby build`
 
-Run a production build into `./public`. The result is ready to be put on any static hosting you prefer.
+Run a production build into `./public`. The result is ready to be put on any static hosting you prefer. -->
