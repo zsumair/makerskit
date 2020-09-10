@@ -15,10 +15,11 @@ export const Card = props => {
     navigation,
     slug,
     summary,
+    tags,
   } = props
 
   return (
-    <div className="bg-white h-full shadow-sm rounded-md overflow-hidden hover:bg-blue-100">
+    <div className="bg-white h-full shadow-sm rounded-md overflow-hidden hover:bg-blue-100 text-center">
       <Link to={`/${slug}`} state={{ navigation }} asModal>
         <div className="bg-blue-300">
           <Img fluid={cover.childImageSharp.fluid} alt={name} />
@@ -28,6 +29,19 @@ export const Card = props => {
             {name}
           </h1>
           <p className="text-base text-blue-900 mb-5 font-medium">{summary}</p>
+          <div
+            className="p-2  items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex"
+            role="alert"
+          >
+            {tags.map(tag => (
+              <span
+                key={tag}
+                className="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
           <Feature label="Country" value={country} />
         </div>
       </Link>

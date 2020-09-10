@@ -4,6 +4,7 @@ import { Card } from "."
 
 export const Cards = props => {
   const { nodes } = props
+  // console.log(nodes)
 
   return (
     <div className="container pt-6 overflow-hidden">

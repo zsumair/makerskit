@@ -1,28 +1,83 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import { Cards, Hero, SiteMetadata } from "../components"
 import { Layout } from "../layouts/Layout"
 
 export default ({ data }) => {
+  const { items } = data
+  const [category, setCategory] = useState([])
+  const [values, setValues] = useState([])
+  const [sorted, setSorted] = useState([])
+
+  useEffect(() => {
+    let temp = items.nodes.map(val => {
+      return val.data.country
+    })
+    setValues(items.nodes)
+    setCategory([...new Set(temp)])
+  }, [])
+
+  function handleTag(tag) {
+    const temparr = values
+      .filter(item => item.data.country === tag)
+      .map(item => item)
+    setSorted(temparr)
+  }
+
+  // console.log(sorted, "sorted")
+
   return (
     <Layout>
       <SiteMetadata
-        title="Travel destinations"
+        title="Amazing Curated List"
         description="Check the most popular travel destinations in Europe."
         image={data.hero.url}
       />
 
-      <Hero
+      {/* <Hero
         image={data.hero}
         tag="#travel"
         title="Travel destinations"
         description="Check the most popular travel locations in Europe."
-      />
+      /> */}
+      <div className="container text-center">
+        <div
+          key={"All"}
+          className="p-2  items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex"
+          role="alert"
+        >
+          <button
+            onClick={e => handleTag("all")}
+            className="bg-blue-500 focus:outline-none focus:shadow-outline hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+          >
+            All
+          </button>
+        </div>
+        {category.map(tag => (
+          <div
+            key={tag}
+            className="p-2  items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex"
+            role="alert"
+          >
+            <button
+              onClick={e => handleTag(tag)}
+              className="bg-blue-500 focus:outline-none focus:shadow-outline hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+            >
+              {tag}
+            </button>
+          </div>
+        ))}
+      </div>
 
-      <Cards nodes={data.items.nodes} />
+      {/*  */}
+
+      <Cards
+        nodes={sorted.length > 1 || sorted.length === 1 ? sorted : values}
+      />
     </Layout>
   )
 }
+//data: {{tags: {eq: ${tag}}}}
 
 export const query = graphql`
   query IndexQuery($tableName: String!) {
@@ -39,6 +94,7 @@ export const query = graphql`
           name
           slug
           summary
+          tags
         }
       }
     }
