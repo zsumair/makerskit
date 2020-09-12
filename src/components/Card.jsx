@@ -71,7 +71,7 @@ export const query = graphql`
   fragment CardImageFragment on AirtableField {
     localFiles {
       childImageSharp {
-        fluid(maxWidth: 640, maxHeight: 420, cropFocus: NORTH) {
+        fluid(maxWidth: 800, maxHeight: 420, cropFocus: CENTER) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
