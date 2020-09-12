@@ -30,8 +30,8 @@ export default ({ data }) => {
   return (
     <Layout>
       <SiteMetadata
-        title="Amazing Curated List"
-        description="Check the most popular travel destinations in Europe."
+        title="Curated List of apps for Makers"
+        description="List of apps for makers and nocode developers"
         image={data.hero.url}
       />
 

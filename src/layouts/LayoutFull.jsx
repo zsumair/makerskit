@@ -8,8 +8,9 @@ export const LayoutFull = ({ children }) => {
       <header className="bg-white py-6">
         <div className="container text-center">
           <Link to="/" className="inline-block">
-            <h2 className="font-sans text-4xl uppercase text-teal-500">
-              MakersKit
+            <h2 className="text-3xl uppercase text-indigo-500">
+              <span className="text-4xl">M</span>
+              <span className="font-sans text-2xl">akerskit</span>
             </h2>
           </Link>
         </div>
@@ -20,7 +21,7 @@ export const LayoutFull = ({ children }) => {
           <SignupForm />
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

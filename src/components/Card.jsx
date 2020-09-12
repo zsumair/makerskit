@@ -30,7 +30,7 @@ export const Card = props => {
           </h1>
           <p className="text-base text-blue-900 mb-5 font-medium">{summary}</p>
           <div
-            className="p-2  items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex"
+            className="p-2 mb-5  items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex"
             role="alert"
           >
             {tags.map(tag => (
@@ -42,7 +42,7 @@ export const Card = props => {
               </span>
             ))}
           </div>
-          <Feature label="Country" value={category} />
+          <Feature label="Category" value={category} />
         </div>
       </Link>
     </div>
