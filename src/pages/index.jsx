@@ -5,13 +5,14 @@ import { Layout } from "../layouts/Layout"
 
 export default ({ data }) => {
   const { items } = data
+  // console.log("Data", items.nodes)
   const [category, setCategory] = useState([])
   const [values, setValues] = useState([])
   const [sorted, setSorted] = useState([])
 
   useEffect(() => {
     let temp = items.nodes.map(val => {
-      return val.data.country
+      return val.data.category
     })
     setValues(items.nodes)
     setCategory([...new Set(temp)])
@@ -19,7 +20,7 @@ export default ({ data }) => {
 
   function handleTag(tag) {
     const temparr = values
-      .filter(item => item.data.country === tag)
+      .filter(item => item.data.category === tag)
       .map(item => item)
     setSorted(temparr)
   }
@@ -74,9 +75,11 @@ export default ({ data }) => {
       <Cards
         nodes={sorted.length > 1 || sorted.length === 1 ? sorted : values}
       />
+      {/* <Cards nodes={items.nodes} /> */}
     </Layout>
   )
 }
+
 //data: {{tags: {eq: ${tag}}}}
 
 export const query = graphql`
@@ -87,7 +90,7 @@ export const query = graphql`
     items: allAirtable(filter: { table: { eq: $tableName } }) {
       nodes {
         data {
-          country
+          category
           image {
             ...CardImageFragment
           }

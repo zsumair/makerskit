@@ -5,6 +5,7 @@ const { AIRTABLE_TABLE_NAME: tableName } = process.env
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
+  console.log(tableName, "Tablename")
   return new Promise((resolve, reject) => {
     graphql(`
 
