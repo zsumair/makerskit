@@ -6,7 +6,7 @@ module.exports = {
       contact: "mailto:contact@me.com",
       facebook: "https://www.facebook.com",
       linkedin: "https://www.linkedin.com",
-      twitter: "https://www.twitter.com",
+      twitter: "https://twitter.com/zsumair",
     },
     locale: "en",
     title: "Makers Kit",

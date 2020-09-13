@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import React from "react"
 import {
   FaEnvelope,
@@ -32,28 +32,28 @@ export const Footer = () => {
       <div className="container pt-12 pb-12 flex flex-wrap text-center lg:flex-row-reverse lg:justify-between lg:items-center">
         <ul className="w-full lg:w-auto">
           <FooterIconLink
-            href={links.facebook}
-            icon={FaFacebookF}
-            label="Facebook"
-          />
-          <FooterIconLink
             href={links.twitter}
             icon={FaTwitter}
             label="Twitter"
           />
-          <FooterIconLink
-            href={links.linkedin}
-            icon={FaLinkedinIn}
-            label="LinkedIn"
-          />
-          <FooterIconLink
+          {/* <FooterIconLink
             href={links.contact}
             icon={FaEnvelope}
             label="E-mail"
-          />
+          /> */}
         </ul>
         <div className="w-full lg:w-auto pt-6 lg:pt-0 text-blue-800 text-sm">
           &copy; 2020 All rights reserved.
+        </div>
+        <div className="w-full lg:w-auto pt-6 lg:pt-0 text-blue-800 text-sm">
+          Made by{" "}
+          <a
+            href="https://zsumair.me/"
+            target="_blank"
+            className="text-orange-500"
+          >
+            zsumair
+          </a>
         </div>
       </div>
     </footer>

@@ -16,12 +16,12 @@ export const LayoutFull = ({ children }) => {
         </div>
       </header>
       {children}
-      <div className="bg-white py-8 lg:py-16 mt-8">
+      {/* <div className="bg-white py-8 lg:py-16 mt-8">
         <div className="container">
           <SignupForm />
         </div>
-      </div>
-      {/* <Footer /> */}
+      </div> */}
+      <Footer />
     </>
   )
 }
