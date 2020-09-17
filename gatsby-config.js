@@ -20,7 +20,7 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-gtag`,
       options: {
         // The property ID; the tracking code won't be generated without it
         trackingId: process.env.GA_TRACKING_ID,
@@ -28,9 +28,6 @@ module.exports = {
         head: true,
         // Setting this parameter is optional
         anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: false,
-        cookieDomain: "https://www.makerskit.tech/",
       },
     },
     `gatsby-plugin-sharp`,
